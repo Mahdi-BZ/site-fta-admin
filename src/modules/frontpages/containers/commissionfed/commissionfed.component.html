@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour de la commission fédérale</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="commissionForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="idmembre">ID</label>
+                        <input required id="idmembre" type="number" formControlName="idmembre" class="form-control">
+
+                        <label for="nom">Nom</label>
+                        <input required id="nom" type="text" formControlName="nom" class="form-control">
+
+                        <label for="president">Président</label>
+                        <input required id="president" type="text" formControlName="president" class="form-control">
+
+                        <label for="email">E-mail</label>
+                        <input required id="email" type="text" formControlName="email" class="form-control">
+                        <br>
+                        <button [disabled]="!commissionForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

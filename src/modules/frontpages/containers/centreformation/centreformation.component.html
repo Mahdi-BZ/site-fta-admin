@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour des centres de
+                    formations</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="centreForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="name">Nom du centre</label>
+                        <input required id="name" type="text" formControlName="name" class="form-control">
+
+                        <label for="directeur">Directeur</label>
+                        <input required id="directeur" type="text" formControlName="directeur" class="form-control">
+
+                        <label for="tel">Tel</label>
+                        <input required id="tel" type="text" formControlName="tel" class="form-control">
+                        <br>
+                        <button [disabled]="!centreForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

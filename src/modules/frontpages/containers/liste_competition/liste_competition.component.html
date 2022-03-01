@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajouter une compétition</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="compForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="nom">Nom Compétition</label>
+                        <input required id="nom" type="text" formControlName="nom" class="form-control">
+
+                        <label for="type">Type</label>
+                        <input required id="type" type="text" formControlName="type" class="form-control">
+
+                        <div class="form-group">
+                            <label class="small mb-1" for="file">Upload fichier</label>
+                            <input required id="file" type="file" formControlName="file" class="form-control"
+                                   (change)="onFileSelected({event : $event})">
+                        </div>
+                        <button class="btn btn-primary" (click)="onUpload()">Envoyer</button>
+
+                        <button [disabled]="!compForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

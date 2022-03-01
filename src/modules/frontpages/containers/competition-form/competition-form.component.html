@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10" >
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header">
+                    <form [formGroup]="form" class="form-theme" (ngSubmit)="onUpload()">
+                        <div class="form-row">
+                            <div>
+                                <h3><label>nom de la competition</label></h3>
+                                <input type="text" class="form-control"
+                                       formControlName="name" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <label>Choisir un fichier pdf...</label>
+                                <input type="file" (change)="onFileSelected({event : $event})" >
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <label>Choisir une image</label>
+                                <input type="file" (change)="onImageSelected({event : $event})">
+                            </div>
+                        </div>
+                        <button class="btn btn-primary" [disabled]="!form.valid">Submit form</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

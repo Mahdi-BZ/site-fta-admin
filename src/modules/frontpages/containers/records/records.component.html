@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour des records</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="recordForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="idcompetition">ID</label>
+                        <input required id="idcompetition" type="number" formControlName="idcompetition"
+                               class="form-control">
+
+                        <label for="Epr">Epreuve</label>
+                        <input required id="Epr" type="date" formControlName="Epr" class="form-control">
+
+                        <label for="Performance">Performance</label>
+                        <input required id="Performance" type="text" formControlName="Performance" class="form-control">
+
+                        <label for="nomprenom">Nom et Prenom</label>
+                        <input required id="nomprenom" type="text" formControlName="nomprenom" class="form-control">
+
+                        <label for="categorie">Categorie</label>
+                        <input required id="categorie" type="text" formControlName="categorie" class="form-control">
+
+                        <label for="age">Age</label>
+                        <input required id="age" type="number" formControlName="age" class="form-control">
+
+                        <label for="lieu">Lieu</label>
+                        <input required id="lieu" type="number" formControlName="lieu" class="form-control">
+
+                        <label for="date">Date</label>
+                        <input required id="date" type="date" formControlName="date" class="form-control">
+
+                        <label for="file">Upload fichier</label>
+                        <input required id="file" type="file" formControlName="file" class="form-control"
+                               (change)="onFileSelected({event : $event})">
+                        <button class="btn btn-primary" (click)="onUpload()">Envoyer</button>
+
+                        <button [disabled]="!recordForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

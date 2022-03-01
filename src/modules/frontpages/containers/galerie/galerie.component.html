@@ -1,0 +1,35 @@
+
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Modifier la galerie </h3>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="onsubmit()">
+                        <div class="container">
+                            <div class="form-row" *ngFor="let obj of dataarray; let i=index">
+
+                                <div class="form-group col-md-4">
+                                    <label>Nom compétition</label>
+                                    <input type="text" class="form-control" name="nomcomp">
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    <label>Upload Image</label>
+                                    <input type="file" class="form-control" name="imag{{i}}" [(ngModel)]="obj.imag">
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Upload Video</label>
+                                    <input type="file" class="form-control" name="video{{i}}" [(ngModel)]="obj.video">
+
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <span (click)="removeForm(i)" class="btn btn-danger" *ngIf="i!=0">Remove</span>
+                                </div>
+                                <span (click)="addForm()" class="btn btn-success">Add</span>
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+

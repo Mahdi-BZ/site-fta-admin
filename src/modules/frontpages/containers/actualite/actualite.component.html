@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajouter une actualité</h3></div>
+                <div class="card-body">
+
+
+                            <input required id="file" type="file" class="file-input"
+                                   (change)="onFileSelected({event : $event})">
+<br>
+<br>
+                    
+                    <button class="btn btn-primary" type="button" (click)="onUpload()">Envoyer</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

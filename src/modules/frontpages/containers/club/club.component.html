@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour des clubs</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="clubForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="idclub">ID</label>
+                        <input required id="idclub" type="number" formControlName="idclub" class="form-control">
+
+                        <label for="name">Nom</label>
+                        <input required id="name" type="text" formControlName="name" class="form-control">
+
+                        <label for="gouvernorat">Gouvernorat</label>
+                        <input required id="gouvernorat" type="text" formControlName="gouvernorat" class="form-control">
+
+                        <label for="presidentsecretaireGenerale">President_secretaireGenerale</label>
+                        <input required id="presidentsecretaireGenerale" type="text"
+                               formControlName="presidentsecretaireGenerale" class="form-control">
+
+                        <label for="mobilePresidentsecretaireGenerale">Tel </label>
+                        <input required id="mobilePresidentsecretaireGenerale" type="text"
+                               formControlName="mobilePresidentsecretaireGenerale" class="form-control">
+
+                        <label for="mobileClub">Tel Club</label>
+                        <input required id="mobileClub" type="text" formControlName="mobileClub" class="form-control">
+
+                        <label for="faxClub">Fax Club</label>
+                        <input required id="faxClub" type="text" formControlName="faxClub" class="form-control">
+
+                        <label for="adresse">Adresse</label>
+                        <input required id="adresse" type="date" formControlName="adresse" class="form-control">
+
+                        <label for="img">Logo</label>
+                        <input required id="img" type="file" formControlName="img" class="form-control">
+                        <br>
+                        <button [disabled]="!clubForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

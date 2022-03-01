@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour Bureau Fédérale</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="bureauFedForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="cin">CIN</label>
+                        <input required id="cin" type="number" formControlName="cin" class="form-control">
+
+                        <label for="nom">Nom</label>
+                        <input required id="nom" type="text" formControlName="nom" class="form-control">
+
+                        <label for="poste">Poste</label>
+                        <input required id="poste" type="text" formControlName="poste" class="form-control">
+
+                        <label for="email">E-mail</label>
+                        <input required id="email" type="text" formControlName="email" class="form-control">
+
+                        <label for="tel">Tel </label>
+                        <input required id="tel" type="text" formControlName="tel" class="form-control">
+
+                        <label for="ddn">Date de naissance</label>
+                        <input required id="ddn" type="date" formControlName="ddn" class="form-control">
+
+                        <button [disabled]="!bureauFedForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour Masters</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="masterForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="description">Description</label>
+                        <input required id="description" type="text" formControlName="description" class="form-control">
+
+                        <label for="nbrpatrtietr">Nombre Participants étrangers</label>
+                        <input required id="nbrpatrtietr" type="number" formControlName="nbrpatrtietr"
+                               class="form-control">
+
+                        <label for="nbrtotal">Nombre Participants Global</label>
+                        <input required id="nbrtotal" type="number" formControlName="nbrtotal" class="form-control">
+                        <div class="form-group">
+                            <label class="small mb-1" for="file">Upload fichier</label>
+                            <input required id="file" type="file" formControlName="file" class="form-control"
+                                   (change)="onFileSelected({event : $event})">
+                        </div>
+                        <br>
+                        <button class="btn btn-primary" (click)="onUpload()">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

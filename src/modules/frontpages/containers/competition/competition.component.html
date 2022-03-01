@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour des
+                    compétitions</h3>
+                    <p align="right">
+                        <button class="btn btn-success" routerLink="form">nouvelle competition</button>
+                    </p>
+                </div>
+                <table class="table table-striped w-auto">
+                    <thead>
+                    <tr>
+                        <td>
+                            nom
+                        </td>
+                        <td>
+                            image
+                        </td>
+                        <td>
+                            description
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let c of competitions">
+                        <td>{{c.name}}</td>
+                        <td><img src="{{path}}{{c.image}}" height="100" width="150"></td>
+                        <td><a *ngIf="c.file_name !== '' " target="_blank"
+                               href="{{path}}{{c.file_name}}">description</a>
+                        </td>
+                        <td>
+                            <button class="btn btn-primary" routerLink="form/{{c._id}}">modifier</button>
+                            <button class="btn btn-danger" (click)="onDelete(c._id)">supprimer</button>
+                        </td>
+                    </tr>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

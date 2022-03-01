@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajouter une ligue</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="ligueForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="idligue">ID</label>
+                        <input required id="idligue" type="number" formControlName="idligue" class="form-control">
+
+                        <label for="nomligue">Nom Ligue</label>
+                        <input required id="nomligue" type="text" formControlName="nomligue" class="form-control">
+
+                        <label for="fax">Fax</label>
+                        <input required id="fax" type="number" formControlName="fax" class="form-control">
+
+                        <label for="email">E-mail</label>
+                        <input required id="email" type="text" formControlName="email" class="form-control">
+
+                        <label for="fb">Facebook</label>
+                        <input required id="fb" type="text" formControlName="fb" class="form-control">
+
+                        <label for="tel">Tel</label>
+                        <input required id="tel" type="number" formControlName="tel" class="form-control">
+
+                        <button [disabled]="!ligueForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Mise à jour Calendrier</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="calendrierForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="idcompetition">ID</label>
+                        <input required id="idcompetition" type="number" formControlName="idcompetition"
+                               class="form-control">
+
+                        <label for="nom">Nom Compétition</label>
+                        <input required id="nom" type="text" formControlName="nom" class="form-control">
+
+                        <label for="organisateur">Organisateur</label>
+                        <input required id="organisateur" type="date" formControlName="organisateur"
+                               class="form-control">
+
+                        <label for="lieu">Lieu</label>
+                        <input required id="lieu" type="text" formControlName="lieu" class="form-control">
+
+                        <label for="niveau">Niveau</label>
+                        <input required id="niveau" type="text" formControlName="niveau" class="form-control">
+
+                        <label for="categorie">Categorie</label>
+                        <input required id="categorie" type="text" formControlName="categorie" class="form-control">
+
+                        <label for="type">Type</label>
+                        <input required id="type" type="text" formControlName="type" class="form-control">
+
+                        <label for="date">Date</label>
+                        <input required id="date" type="date" formControlName="date" class="form-control">
+
+                        <button [disabled]="!calendrierForm.valid" class="btn btn-primary">Envoyer</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

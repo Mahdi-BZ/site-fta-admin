@@ -1,0 +1,167 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajout d'athlétes</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="athleteForm" id="form" class="form-theme" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="id">Numero</label>
+                                <input required id="id" type="text" formControlName="numero" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="nom">Nom</label>
+                                <input required id="nom" type="text" formControlName="nom" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="prenom">Prénom</label>
+                                <input required id="prenom" type="text" formControlName="prenom" class="form-control">
+                                <br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label>Sexe</label> <br>
+                                <input type="radio" formControlName="sexe" value="Masculin"> Masculin
+                                <input type="radio" formControlName="sexe" value="Féminin"> Féminin
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="ddn">Date de naissance</label>
+                                <input required id="ddn" type="date" formControlName="ddn" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lieu">Lieu</label>
+                                <input required id="lieu" type="text" formControlName="lieu" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="club">Club</label>
+                                <input required id="club" type="text" formControlName="club" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="clubetranger">Club à l'étranger </label>
+                                <input required id="clubetranger" type="text" formControlName="clubetranger"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <label>Disciplines</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input required id="discipline1" type="text" formControlName="discipline1"
+                                       value="discipline1"
+                                       class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input required id="discipline2" type="text" formControlName="discipline2"
+                                       value="discipline2"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <label>Meilleur Performances</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input required id="Meilleurperfo1" type="text" formControlName="meilleurPerfo1"
+                                       value="Meilleurperfo1" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <input required id="Meilleurperfo2" type="text" formControlName="meilleurPerfo2"
+                                       value="Meilleurperfo2" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="etablissement">Etablissement</label>
+                                <input required id="etablissement" type="text" formControlName="etablissement"
+                                       class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="classe">Classe</label>
+                                <input required id="classe" type="text" formControlName="classe" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="encadreurtech">Encadreur Technique</label>
+                                <input required id="encadreurtech" type="text" formControlName="encadreurtech"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="Npasseport">N° passeport</label>
+                                <input required id="Npasseport" type="text" formControlName="Npasseport"
+                                       class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="validite">Validité</label>
+                                <input required id="validite" type="text" formControlName="validité"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="telephone">Téléphone</label>
+                                <input required id="telephone" type="text" formControlName="telephone"
+                                       class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="adremail">E-mail</label>
+                                <input required id="adremail" type="text" formControlName="adremail"
+                                       class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="adresse">Adresse</label>
+                                <input required id="adresse" type="text" formControlName="adresse" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="pointure">Pointure</label>
+                                <input required id="pointure" type="text" formControlName="pointure"
+                                       class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="image">photo de l'Athlete</label>
+                                <input id="image" type="file"
+                                       (change)="onFileSelected({event : $event})"
+                                       class="form-control">
+                            </div>
+                        </div>
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-8">-->
+<!--                                <label for="PathPerformanceCopiePDF">Performance</label>-->
+<!--                                <input required id="PathPerformanceCopiePDF" type="file"-->
+<!--                                       formControlName="PathPerformanceCopiePDF"-->
+<!--                                       class="form-control">-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <button class="btn btn-primary">
+                            Envoyer
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-5">
+            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                <div class="card-header"><h3 class="text-center font-weight-light my-4">Ajouter un document</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="formationForm" class="form-theme" (ngSubmit)="onSubmit()">
+
+                        <label for="natureformation">Nature Formation</label>
+                        <input required id="natureformation" type="number" formControlName="natureformation"
+                               class="form-control">
+
+                        <label for="lieu">Lieu</label>
+                        <input required id="lieu" type="text" formControlName="lieu" class="form-control">
+
+                        <label for="organisme">Oorganisme</label>
+                        <input required id="organisme" type="file" formControlName="organisme" class="form-control">
+
+                        <button [disabled]="!formationForm.valid" class="btn btn-primary">Envoyer</button>
+
+
+
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
